@@ -86,3 +86,31 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+var totalPL = 0;
+
+var changes = [];
+
+console.log(finances.length);
+
+for (let i=0; i< finances.length; i++){
+  totalPL = totalPL + finances[i][1];
+};
+
+console.log (totalPL);
+
+for (let i=0; i< finances.length -1; i++){
+  changes[i] = finances[i+1][1] - finances[i][1]
+}
+
+console.log(changes);
+
+var totalChange = 0;
+
+for (let i=0; i < changes.length; i++){
+  totalChange = totalChange + changes[i];
+};
+
+console.log(totalChange);
+console.log(totalChange / 85);
+
