@@ -116,7 +116,12 @@ console.log(totalChange);
 console.log((totalChange / 85).toFixed(2));
 
 greatestProfitIncrease = 0
-greatestProfitMonth = 0;
+greatestProfitMonth = "";
+
+greatestLossIncrease = 0;
+greatestLossMonth = "";
+
+// Adjust the index between changes[] and finances[][] since changes is 1 month behind of finances in index
 
 for (let i=0; i < changes.length; i++){
 
@@ -125,8 +130,21 @@ for (let i=0; i < changes.length; i++){
     greatestProfitMonth = finances[0][0];   //grab the corresponding month from the finances table
   } else if (changes[i] > greatestProfitIncrease){   //compare the new value to see if it is bigger than the current stored value
     greatestProfitIncrease = changes[i];            //store the new higher value and month from their respective arrays
-    greatestProfitMonth = finances[i][0];
+    greatestProfitMonth = finances[i+1][0];
   }
 }
 
 console.log(greatestProfitMonth, greatestProfitIncrease);
+
+for (let i=0; i < changes.length; i++){
+
+  if (i===0){
+    greatestLossIncrease = changes[0];    //grab the first value without a comparison at the start
+    greatestLossMonth = finances[0][0];   //grab the corresponding month from the finances table
+  } else if (changes[i] < greatestLossIncrease){   //compare the new value to see if it is smaller than than the current stored value
+    greatestLossIncrease = changes[i];            //store the new lower value and month from their respective arrays
+    greatestLossMonth = finances[i+1][0];
+  }
+}
+
+console.log(greatestLossMonth, greatestLossIncrease);
