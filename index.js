@@ -112,5 +112,21 @@ for (let i=0; i < changes.length; i++){
 };
 
 console.log(totalChange);
-console.log(totalChange / 85);
+//researched toFixed method and used it here.
+console.log((totalChange / 85).toFixed(2));
 
+greatestProfitIncrease = 0
+greatestProfitMonth = 0;
+
+for (let i=0; i < changes.length; i++){
+
+  if (i===0){
+    greatestProfitIncrease = changes[0];    //grab the first value without a comparison at the start
+    greatestProfitMonth = finances[0][0];   //grab the corresponding month from the finances table
+  } else if (changes[i] > greatestProfitIncrease){   //compare the new value to see if it is bigger than the current stored value
+    greatestProfitIncrease = changes[i];            //store the new higher value and month from their respective arrays
+    greatestProfitMonth = finances[i][0];
+  }
+}
+
+console.log(greatestProfitMonth, greatestProfitIncrease);
