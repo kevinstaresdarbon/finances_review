@@ -1,3 +1,5 @@
+// This dataset is provided in the starter code:
+
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -87,33 +89,11 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// Initialise Variables:
+
 var totalPL = 0;
-
 var changes = [];
-
-console.log(finances.length);
-
-for (let i=0; i< finances.length; i++){
-  totalPL = totalPL + finances[i][1];
-};
-
-console.log (totalPL);
-
-for (let i=0; i< finances.length -1; i++){
-  changes[i] = finances[i+1][1] - finances[i][1]
-}
-
-console.log(changes);
-
 var totalChange = 0;
-
-for (let i=0; i < changes.length; i++){
-  totalChange = totalChange + changes[i];
-};
-
-console.log(totalChange);
-//researched toFixed method and used it here.
-console.log((totalChange / 85).toFixed(2));
 
 greatestProfitIncrease = 0
 greatestProfitMonth = "";
@@ -121,7 +101,30 @@ greatestProfitMonth = "";
 greatestLossIncrease = 0;
 greatestLossMonth = "";
 
-// Adjust the index between changes[] and finances[][] since changes is 1 month behind of finances in index
+
+// Perform calculations here
+
+// Calculate the sum total of the finances
+
+for (let i=0; i< finances.length; i++){
+  totalPL = totalPL + finances[i][1];
+};
+
+// Create an array to hold all of the change values
+
+for (let i=0; i< finances.length -1; i++){
+  changes[i] = finances[i+1][1] - finances[i][1]
+}
+
+//Calculate the sum total of the changes
+
+for (let i=0; i < changes.length; i++){
+  totalChange = totalChange + changes[i];
+};
+
+
+// ****Adjust the index between changes[] and finances[][] since changes is 1 month behind of finances in index ****
+// Calculate the greatest profit from month to month
 
 for (let i=0; i < changes.length; i++){
 
@@ -134,7 +137,7 @@ for (let i=0; i < changes.length; i++){
   }
 }
 
-console.log(greatestProfitMonth, greatestProfitIncrease);
+//Calculate the greatest loss from month to month, it is simply the reverse of the previous algorithm
 
 for (let i=0; i < changes.length; i++){
 
@@ -147,4 +150,24 @@ for (let i=0; i < changes.length; i++){
   }
 }
 
+
+
+// Gather console.logs here 
+
+// Display the total number of months in the dataset.  it is equal to the length of the data set
+console.log(finances.length);
+
+//Display the total Profit/loss
+console.log (totalPL);
+
+// console.log(changes);   no longer needed, was just used to check in the array filled properly
+
+// display total change
+// console.log(totalChange); no longer needed, was just used to see if a result was correctly generated
+
+// researched toFixed method and used it here on the display of the average total change.
+// Display the average total change of *85* total changes
+console.log((totalChange / 85).toFixed(2));
+
+console.log(greatestProfitMonth, greatestProfitIncrease);
 console.log(greatestLossMonth, greatestLossIncrease);
