@@ -154,11 +154,16 @@ for (let i=0; i < changes.length; i++){
 
 // Gather console.logs here 
 
-// Display the total number of months in the dataset.  it is equal to the length of the data set
-console.log(finances.length);
+// **** Make the final results for the console logs to resemble the task requirements  ******  
+
+console.log("Financial Analysis");
+console.log("------------------------------------------------------------------------------------------------")
+
+// Display the total number of months in the dataset.  it is equal to the length of the data set. updated to resemble the desired output -
+console.log("Total Months: " + finances.length);
 
 //Display the total Profit/loss
-console.log (totalPL);
+console.log ("Total: $" + totalPL);
 
 // console.log(changes);   no longer needed, was just used to check in the array filled properly
 
@@ -167,7 +172,10 @@ console.log (totalPL);
 
 // researched toFixed method and used it here on the display of the average total change.
 // Display the average total change of *85* total changes
-console.log((totalChange / 85).toFixed(2));
+console.log("Average Change: ", ((totalChange / 85).toFixed(2)));
 
-console.log(greatestProfitMonth, greatestProfitIncrease);
-console.log(greatestLossMonth, greatestLossIncrease);
+// Updated these logs to fit the requirements
+console.log("Greatest Increase in Profits/Losses: " +  greatestProfitMonth + " ($" + greatestProfitIncrease + ")");
+console.log("Greatest Decrease in Profits/Losses: " +  greatestLossMonth + " ($" + greatestLossIncrease + ")");
+
+console.log("------------------------------------------------------------------------------------------------")
