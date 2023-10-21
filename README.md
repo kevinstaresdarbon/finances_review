@@ -28,7 +28,7 @@ if you simply wish to view the page you can use this link:
 
 ## Usage
   
-This webpage is purely for intrsuctional purposes.  It serves no use other than to demonstrate the bare minimum of coding capacity
+This webpage is purely for instructional purposes.  It serves no use other than to demonstrate the bare minimum of coding capacity
   
 ## Credits
   
@@ -44,10 +44,9 @@ The template and advice for this README was taken from this site:
 Below are the screenshots of the finished challenge:
   
 Above 1200px wide:  
-![Alt Desktop](./screenshot.png)  
+![Alt Desktop](./assets/images/screenshot.png)  
  
   
 ## License  
   
 MIT License citation is supplied [HERE](./LICENSE)
-
